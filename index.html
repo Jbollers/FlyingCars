@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-particle-system-component@1.0.x/dist/aframe-particle-system-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script> 
+  </head>
+  <body>
+    <a-scene>
+      <!--a-sky color="#FF0000"></a-sky-->
+    
+      <!--a-entity geometry="primitive: torusKnot" scale="2 2 2" position="0 6 -10" material="color:black;
+              metalness:1; roughness:0.1; sphericalEnvMap:#sky;">
+      <a-animation easing="linear" attribute="rotation" dur="10000"
+                   to="0 0 360" repeat="indefinite"></a-animation>
+      </a-entity-->
+      <a-entity obj-model="obj:#avent-obj;mtl:#avent-mtl"position="-.2 0 -10" scale="1 1 1">
+      <a-animation easing="linear" attribute="rotation" dur="10000"
+                   to="0 360 0" repeat="indefinite"></a-animation>
+      </a-entity>
+      <a-entity obj-model="obj:#challenger-obj;mtl:#challenger-mtl"position="-.2 7 -10" scale="1 1 1"rotation="270 90 0">
+      <a-animation easing="linear" attribute="rotation" dur="10000"
+                   to="270 360 0" repeat="indefinite"></a-animation>
+      </a-entity>
+      <a-entity obj-model="obj:#classic-obj;mtl:#classic-mtl"position="-.2 4 -10" scale="1 1 1"rotation="270 180 0">
+      <a-animation easing="linear" attribute="rotation" dur="10000"
+                   to="270 360 0" repeat="indefinite"></a-animation>
+      </a-entity>
+      <!--a-entity geometry="primitive:plane;width: 10000;height: 10000;"rotation="-90 0 0"material="src:#grid;
+      repeat:10000 10000;transparent:true;metalness:0.6;roughness:0.4;sphericalEnvMap:#sky;"></a-entity-->
+      <a-entity environment="preset: forest; dressingAmount: 500"></a-entity>
+      <a-entity id="rain" particle-system="preset:rain;color:#24CAFF;particleCount:5000"></a-entity>
+      <a-assets>
+        <!--img id="grid"
+        src="https://img.gs/bbdkhfbzkk/stretch/https://i.imgur.com/25P1geh.png" 
+        crossorigin="anonymous"/-->
+        <img id="sky" 
+        src="https://img.gs/bbdkhfbzkk/2048×2048,stretch/http://i.imgur.com/WqlqEkq.jpg" 
+        crossorigin="anonymous"/>
+      
+      
+        <a-asset-item id= "avent-obj" 
+        src="https://cdn.glitch.com/b4ff97cf-db53-4aaa-b23a-5ae680170c80%2FAvent.obj?1519250990041"
+        ></a-asset-item>
+        <a-asset-item id= "avent-mtl"
+        src="https://cdn.glitch.com/b4ff97cf-db53-4aaa-b23a-5ae680170c80%2FAvent.mtl?1519250988111"
+        ></a-asset-item>  
+        <a-asset-item id= "challenger-obj" 
+        src="https://cdn.glitch.com/b4ff97cf-db53-4aaa-b23a-5ae680170c80%2FCHALLENGER71.obj?1519852127711"
+        ></a-asset-item>
+        <a-asset-item id= "challenger-mtl"
+        src="https://cdn.glitch.com/b4ff97cf-db53-4aaa-b23a-5ae680170c80%2FCHALLENGER71.mtl?1519852127566"
+        ></a-asset-item>
+        <a-asset-item id= "classic-obj" 
+        src="https://cdn.glitch.com/b4ff97cf-db53-4aaa-b23a-5ae680170c80%2Fsls_amg.obj?1519852136909"
+        ></a-asset-item>
+        <a-asset-item id= "classic-mtl"
+        src="https://cdn.glitch.com/b4ff97cf-db53-4aaa-b23a-5ae680170c80%2Fsls_amg.mtl?1519852134637"
+        ></a-asset-item>
+        
+        <a-sky src="#sky" rotation="0 -90 0"></a-sky>
+      </a-assets>
+    </a-scene>
+  </body>
+</html>
